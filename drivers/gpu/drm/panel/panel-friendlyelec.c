@@ -555,6 +555,33 @@ static struct lcd_desc hd101 = {
 	},
 };
 
+static struct lcd_desc TFC_D91210LTWU50TC_C2A = {
+	.width = 1280,
+	.height = 800,
+	.p_width = 261,
+	.p_height = 163,
+	.bpp = 24,
+	.freq = 60,
+
+	.timing = {
+		.h_fp = 48,
+		.h_bp = 80,
+		.h_sw = 30,
+		.v_fp =  3,
+		.v_fpe = 1,
+		.v_bp =  14,
+		.v_bpe = 1,
+		.v_sw = 12,
+	},
+	.polarity = {
+		.rise_vclk = 1,
+		.inv_hsync = 0,
+		.inv_vsync = 0,
+		.inv_vden = 0,
+	},
+};
+
+
 /* HDMI */
 static struct lcd_desc hdmi_def = {
 	.width = 1920,
@@ -601,6 +628,7 @@ static struct {
 	struct lcd_desc *lcd;
 	int ctp;
 } panel_lcd_list[] = {
+	{ "TFC_D91210LTWU50TC_C2A", &TFC_D91210LTWU50TC_C2A, CTP_GOODIX},
 	{ "X710",	&x710,	CTP_ITE7260 },
 	{ "HD101B",	&hd101,	CTP_GOODIX  },
 	{ "HD101",	&hd101,	1 },
