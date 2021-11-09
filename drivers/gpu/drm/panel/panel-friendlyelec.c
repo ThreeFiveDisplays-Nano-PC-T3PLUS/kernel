@@ -18,6 +18,7 @@
  */
 
 #include <drm/drmP.h>
+#include <drm/drm_mipi_dsi.h>
 #include <drm/drm_panel.h>
 
 #include <linux/module.h>
@@ -29,6 +30,7 @@
 
 #include <video/display_timing.h>
 #include <video/videomode.h>
+#include <video/mipi_display.h>
 
 #include <linux/platform_data/ctouch.h>
 
