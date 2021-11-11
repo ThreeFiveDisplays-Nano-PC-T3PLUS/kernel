@@ -356,7 +356,7 @@ static int TFC_D9400MTWV30TC_01_probe(struct mipi_dsi_device *dsi)
 	ctx->dev = dev;
 
 	ctx->is_power_on = false;
-	dsi->lanes = 4;
+	dsi->lanes = 2;
 	dsi->format = MIPI_DSI_FMT_RGB888;
 	dsi->mode_flags = MIPI_DSI_MODE_VIDEO
 		| MIPI_DSI_MODE_VIDEO_HFP | MIPI_DSI_MODE_VIDEO_HBP
