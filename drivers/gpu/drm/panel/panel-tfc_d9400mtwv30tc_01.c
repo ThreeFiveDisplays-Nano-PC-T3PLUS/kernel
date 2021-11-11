@@ -100,10 +100,69 @@ static void TFC_D9400MTWV30TC_01_set_sequence(struct TFC_D9400MTWV30TC_01 *ctx)
 
 	usleep_range(17000, 18000);
 
-	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0x11);
-	mdelay(120);
-	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0x29);
-	mdelay(50);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0x11); // Exit Sleep Mode
+	mdelay(200);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xFF, 0x77, 0x01, 0x00, 0x00, 0x10); // Select Command 2 Bk 0 Mode
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xC0, 0x3B, 0x00); // Set Display Line to 59 Default is 107
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xC1, 0x0D, 0x0C); // Set V-Bk Pch to 13 and Front to 12
+	mdelay(16);	
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xC2, 0x21, 0x08); // Set V-Bk Pch to 13 and Front to 12
+	mdelay(16);	
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB0, 0x00, 0x11, 0x18, 0x0E, 0x11, 0x06, 0x07, 0x08, 0x07, 0x22, 0x04, 0x12, 0x0F, 0xAA, 0x31, 0x18); // Set Pos Gamma
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB1, 0x00, 0x11, 0x19, 0x0E, 0x12, 0x07, 0x08, 0x08, 0x08, 0x22, 0x04, 0x11, 0x11, 0xA9, 0x32, 0x18); // Set Neg Gamma
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xFF, 0x77, 0x01, 0x00, 0x00, 0x11); // Select Command 2 Bk 1 Mode
+	mdelay(16);	
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB0, 0x60); // Vop set to 4.73 Volts
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB1, 0x30); // Vcom set to 0.7 Volts
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB2, 0x87); // VGH set to 15 Volts
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB3, 0x80); // Test Command
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB5, 0x49); // VGL set to -10.17 Volts
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB7, 0x85); // Gamma Op set to Mid range
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xB8, 0x21); // AVDD set to 6.6 Volts
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xC1, 0x78); // Preset Timing to 1.6uSec
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xC2, 0x78); // Source EQ2 set to 6.4uSec
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE0, 0x00, 0x1B, 0x02); // The following are Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE1, 0x08, 0xA0, 0x00, 0x00, 0x07, 0xA0. 0x00, 0x00, 0x00, 0x44, 0x44); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE2, 0x11, 0x11, 0x44, 0x44, 0xED, 0xA0, 0x00, 0x00, 0xEC, 0xA0, 0x00, 0x00); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE3, 0x00, 0x00, 0x11, 0x11); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE4, 0x44, 0x44); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE5, 0x0A, 0xE9, 0xD8, 0xA0, 0x0C, 0xEB, 0xD8, 0xA0, 0x0E, 0xED, 0xD8, 0xA0, 0x10, 0xEF, 0xD8, 0xA0); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE6, 0x00, 0x00, 0x11, 0x11); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE7, 0x44, 0x44); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xE8, 0x09, 0xE8, 0xD8, 0xA0, 0x0B, 0xEA, 0xD8, 0xA0, 0x0D, 0xEC, 0xD8, 0xA0, 0x0F, 0xEE, 0xD8, 0xA0); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xEB, 0x02, 0x00, 0xE4, 0xE4, 0x88, 0x00, 0x40); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xEC, 0x3C, 0x00); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xED, 0xAB, 0x89, 0x76, 0x54, 0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x20, 0x45, 0x67, 0x98, 0xBA); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0xFF, 0x77, 0x01, 0x00, 0x00, 0x00); // Gate Commands
+	mdelay(16);
+	TFC_D9400MTWV30TC_01_dcs_write_seq_static(ctx, 0x29); //Display On
+	mdelay(200);
+
 }
 
 static int TFC_D9400MTWV30TC_01_power_on(struct TFC_D9400MTWV30TC_01 *ctx)
