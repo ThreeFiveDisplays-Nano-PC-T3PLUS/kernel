@@ -827,7 +827,6 @@
 
 	panel@0 {
 		compatible = "TFC_D9400MTWV30TC_0102000";
-		backlight = <&backlight>;
 		reg = <0>;
 		reset-gpio = <&gpio_a 17 0>;
 		power-on-delay= <50>;
