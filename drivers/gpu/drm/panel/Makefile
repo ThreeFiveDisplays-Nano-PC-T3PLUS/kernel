@@ -7,5 +7,5 @@ obj-$(CONFIG_DRM_PANEL_SAMSUNG_S6D7AA) += panel-s6d7aa.o
 obj-$(CONFIG_DRM_PANEL_SHARP_LQ101R1SX01) += panel-sharp-lq101r1sx01.o
 obj-$(CONFIG_DRM_PANEL_S6E8FA0) += panel-s6e8fa0.o
 obj-$(CONFIG_DRM_PANEL_LT010MB) += panel-lt010mb.o
-obj-$(CONFIG_DRM_PANEL_LT010MB) += panel-tfc_d9400mtwv30tc_01.o
+obj-$(CONFIG_DRM_PANEL_TFC_D9400MTWV30TC_01) += panel-tfc_d9400mtwv30tc_01.o
 obj-$(CONFIG_DRM_PANEL_PX0701C) += panel-px0701c.o
