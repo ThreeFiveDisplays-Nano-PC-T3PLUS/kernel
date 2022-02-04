@@ -555,23 +555,23 @@ static struct lcd_desc hd101 = {
 	},
 };
 
-static struct lcd_desc TFC_D91210LTWU50TC_C2A = {
-	.width = 1280,
-	.height = 800,
-	.p_width = 261,
-	.p_height = 163,
+static struct lcd_desc TFC_A9700RTWV80TC_02 = {
+	.width = 800,
+	.height = 480,
+	.p_width = 154,
+	.p_height = 86,
 	.bpp = 24,
-	.freq = 60,
+	.freq = 32,
 
 	.timing = {
-		.h_fp = 48,
-		.h_bp = 80,
-		.h_sw = 30,
-		.v_fp =  3,
+		.h_fp = 40,
+		.h_bp = 88,
+		.h_sw = 20,
+		.v_fp =  13,
 		.v_fpe = 1,
-		.v_bp =  14,
+		.v_bp =  32,
 		.v_bpe = 1,
-		.v_sw = 12,
+		.v_sw = 3,
 	},
 	.polarity = {
 		.rise_vclk = 1,
@@ -628,7 +628,7 @@ static struct {
 	struct lcd_desc *lcd;
 	int ctp;
 } panel_lcd_list[] = {
-	{ "TFC_D91210LTWU50TC_C2A", &TFC_D91210LTWU50TC_C2A, CTP_GOODIX},
+	{ "TFC_A9700RTWV80TC_02", &TFC_A9700RTWV80TC_02, CTP_GOODIX},
 	{ "X710",	&x710,	CTP_ITE7260 },
 	{ "HD101B",	&hd101,	CTP_GOODIX  },
 	{ "HD101",	&hd101,	1 },
