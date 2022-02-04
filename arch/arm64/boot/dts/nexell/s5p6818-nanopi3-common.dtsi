@@ -821,7 +821,15 @@
 		};
 	};
 };
-		
+&dp_drm_rgb {
+		compatible = "nexell,s5pxx18-drm-rgb";
+		reg = <0xc0101000 0x100>;
+		resets = <&nexell_reset RESET_ID_DISP_TOP>;
+		reset-names = "rsc-display-top";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "ok";
+	   };		
 		
 &dp_drm_hdmi {
 	skip-boot-connect;
