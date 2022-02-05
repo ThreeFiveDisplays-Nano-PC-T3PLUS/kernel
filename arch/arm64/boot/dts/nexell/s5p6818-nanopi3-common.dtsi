@@ -817,11 +817,12 @@
 			reg = <1>;
 			back_color = < 0x0 >;
 			color_key = < 0x0 >;
-			plane-names = "video", "primary";
+			plane-names = "video", "rgb", "primary";
 		};
 	};
 };
 &dp_drm_rgb {
+                remote-endpoint = <&lcd_panel>;		
 		compatible = "nexell,s5pxx18-drm-rgb";
 		reg = <0xc0101000 0x100>;
 		resets = <&nexell_reset RESET_ID_DISP_TOP>;
