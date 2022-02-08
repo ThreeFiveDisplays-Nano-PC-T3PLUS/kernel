@@ -561,7 +561,7 @@ static struct lcd_desc TFC_A9700RTWV80TC_02 = {
 	.p_width = 154,
 	.p_height = 86,
 	.bpp = 24,
-	.freq = 32,
+	.freq = 60,
 
 	.timing = {
 		.h_fp = 40,
